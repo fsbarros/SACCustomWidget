@@ -602,6 +602,7 @@
 		}
 
 		setData(){
+			debugger;
 			window.$UI5WidgetController.setExternalData();
 		}
 
