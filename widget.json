@@ -1,0 +1,48 @@
+{
+	"id": "com.demo.ui5chart3",
+	"version": "2.3.0",
+	"name": "Basic UI5 Chart",
+	"description": "Basic UI5 Chart in SAC",
+	"newInstancePrefix": "chart",
+	"icon": "https://googlemapslimited.s3-ap-southeast-2.amazonaws.com/sap.png",
+	"vendor": "SAP",
+	"eula": "",
+	"license": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-demo-basic-ui5-chart",
+			"url": "https://audipocsaccustomwidget1-a2f6dceed.dispatcher.hana.ondemand.com/SACWidget_SAPUI5/widget.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+	},
+	"methods": {
+		"setData": {
+            "description": "Sets the data for the chart.",
+            "parameters": [
+				{
+					"name": "newData",
+					"type": "string",
+					"description": "JSON Feed data"
+				},
+				{
+					"name": "details",
+					"type": "string",
+					"description": "Chart Config"
+				}
+            ]
+		},
+		"getSelection": {
+			"description": "selection data",
+            "returnType": "string"
+		}
+	},
+	"events": {
+		"onSelect": {
+			"description": "Selection on chart update"
+		}
+	}
+}
