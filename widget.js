@@ -12,83 +12,83 @@
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				
 				<m:HBox justifyContent="Center">
-		<m:Panel id="idLegendPanel" expanded="true" expandable="true" backgroundDesign="Solid" width="20rem" class="legendPanel sapUiSmallMarginEnd" >
-		<m:headerToolbar>
-			<m:OverflowToolbar>
-				<m:Title text="Legend"/>
-			</m:OverflowToolbar>
-		</m:headerToolbar>
-		<m:VBox class="sapUiSmallMarginBottom">
-			<m:Label text="Milestones" design="Bold"/>
-			<m:HBox >
-				<html:div class="milestoneColor coloredBox"></html:div>
-				<m:Text text="MS1"/>
-			</m:HBox>
-			<m:HBox >
-				<html:div class="milestoneColor coloredBox"></html:div>
-				<m:Text text="MS2"/>
-			</m:HBox>
-			<m:HBox >
-				<html:div class="milestoneColor coloredBox"></html:div>
-				<m:Text text="MS3"/>
-			</m:HBox>
-		</m:VBox>
-		<m:VBox>
-			<m:Label text="Parts Periods" design="Bold"/>
-			<m:HBox>
-				<m:VBox class="sapUiSmallMarginEnd">
-					<m:HBox >
-						<html:div class="blue1Color coloredBox"></html:div>
-						<m:Text text="Anfrageunterlagen"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="blue2Color coloredBox"></html:div>
-						<m:Text text="CSC Vergabe"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="blue3Color coloredBox"></html:div>
-						<m:Text text="P-Freigabe"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="blue4Color coloredBox"></html:div>
-						<m:Text text="Konstruktion"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="blue5Color coloredBox"></html:div>
-						<m:Text text="B-freigabe"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="coloredBox redColor"></html:div>
-						<m:Text text="Prototypen Laminate"/>
-					</m:HBox>
-				</m:VBox>
-				<m:VBox>
-					<m:HBox >
-						<html:div class="coloredBox orangeColor"></html:div>
-						<m:Text text="KSW o.Note"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="coloredBox yellowColor"></html:div>
-						<m:Text text="KSW Note 3"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="coloredBox green1Color"></html:div>
-						<m:Text text="SWZ Optimlerung"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="coloredBox green2Color"></html:div>
-						<m:Text text="SWZ Note 3"/>
-					</m:HBox>
-					<m:HBox >
-						<html:div class="coloredBox green3Color"></html:div>
-						<m:Text text="SWZ Note 1"/>
-					</m:HBox>
-				</m:VBox>
-			</m:HBox>
-		</m:VBox>
-	</m:Panel>
-		<m:Panel id="idDataPanel"><m:Text text="No Data to display"></m:Text></m:Panel>
-	</m:HBox>
+					<m:Panel id="idLegendPanel" expanded="true" expandable="true" backgroundDesign="Solid" width="20rem" class="legendPanel sapUiSmallMarginEnd" >
+					<m:headerToolbar>
+						<m:OverflowToolbar>
+							<m:Title text="Legend"/>
+						</m:OverflowToolbar>
+					</m:headerToolbar>
+					<m:VBox class="sapUiSmallMarginBottom">
+						<m:Label text="Milestones" design="Bold"/>
+						<m:HBox >
+							<html:div class="milestoneColor coloredBox"></html:div>
+							<m:Text text="MS1"/>
+						</m:HBox>
+						<m:HBox >
+							<html:div class="milestoneColor coloredBox"></html:div>
+							<m:Text text="MS2"/>
+						</m:HBox>
+						<m:HBox >
+							<html:div class="milestoneColor coloredBox"></html:div>
+							<m:Text text="MS3"/>
+						</m:HBox>
+					</m:VBox>
+					<m:VBox>
+						<m:Label text="Parts Periods" design="Bold"/>
+						<m:HBox>
+							<m:VBox class="sapUiSmallMarginEnd">
+								<m:HBox >
+									<html:div class="blue1Color coloredBox"></html:div>
+									<m:Text text="Anfrageunterlagen"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="blue2Color coloredBox"></html:div>
+									<m:Text text="CSC Vergabe"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="blue3Color coloredBox"></html:div>
+									<m:Text text="P-Freigabe"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="blue4Color coloredBox"></html:div>
+									<m:Text text="Konstruktion"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="blue5Color coloredBox"></html:div>
+									<m:Text text="B-freigabe"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="coloredBox redColor"></html:div>
+									<m:Text text="Prototypen Laminate"/>
+								</m:HBox>
+							</m:VBox>
+							<m:VBox>
+								<m:HBox >
+									<html:div class="coloredBox orangeColor"></html:div>
+									<m:Text text="KSW o.Note"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="coloredBox yellowColor"></html:div>
+									<m:Text text="KSW Note 3"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="coloredBox green1Color"></html:div>
+									<m:Text text="SWZ Optimlerung"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="coloredBox green2Color"></html:div>
+									<m:Text text="SWZ Note 3"/>
+								</m:HBox>
+								<m:HBox >
+									<html:div class="coloredBox green3Color"></html:div>
+									<m:Text text="SWZ Note 1"/>
+								</m:HBox>
+							</m:VBox>
+						</m:HBox>
+					</m:VBox>
+				</m:Panel>
+					<m:Panel id="idDataPanel"><m:Text text="No Data to display"></m:Text></m:Panel>
+				</m:HBox>
 				<gnt2:GanttChartContainer id="GanttChartContainer" enableTimeScrollSync="true">
 					<gnt2:toolbar>
 						<gnt2:ContainerToolbar id="idContainerToolbar" showTimeZoomControl="true" showBirdEyeButton="false" showDisplayTypeButton="true"
@@ -100,7 +100,7 @@
 							<Table selectionMode="Single" visibleRowCountMode="Auto" minAutoRowCount="1" selectionBehavior="RowSelector" enableColumnReordering="true"
 								fixedColumnCount="1">
 								<columns>
-									<Column id="seColumn" label="SE" width="40px">
+									<Column id="seColumn" label="SE" width="50px">
 										<template>
 											<m:Label text="{se}"/>
 										</template>
