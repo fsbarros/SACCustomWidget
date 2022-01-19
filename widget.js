@@ -194,15 +194,21 @@
 			this.appendChild(tmpl.content.cloneNode(true));
 			this.$div = this.querySelector('div.ui5-chart-anchor');
 			
-
-			let that = this.$chartController = this;
-
-			this.ChartController = sap.ui.core.mvc.Controller.extend("ChartController", {
+			window.$ChartControllerFactory = this.$ChartControllerFactory = 
+			sap.ui.core.mvc.Controller.extend("ChartController", {
 				onInit: function () {
-					var oGanttChartContainer = this.getView().byId("GanttChartContainer");
-					var oGanttChartWithTable = oGanttChartContainer.getGanttCharts()[0];
-					oGanttChartWithTable.setAxisTimeStrategy(this._createZoomStrategy());
-		
+					window.$UI5WidgetController = this;
+					this.initLocalVars();
+					this.initDataModel();
+					this.setBindings();
+				},
+				initLocalVars: function() {
+					var oView = this.getView();
+					this.oGanttChartContainer = oView.byId("GanttChartContainer");
+					this.oGanttChartWithTable = oView.byId("Truck");
+					this._oModel = {};
+				},
+				initDataModel: function() {
 					this._oModel = new sap.ui.model.json.JSONModel({
 						"root": [{
 							"id": "01",
@@ -383,18 +389,17 @@
 						}]
 					});
 					this.getView().setModel(this._oModel);
-		
-					this.render();
 				},
-				render: function () {
-					var oGanttChartWithTable = this.getView().byId("Truck");
-					var oTable = oGanttChartWithTable.getTable();
+				setBindings: function () {
+					var oTable = this.oGanttChartWithTable.getTable();
+					// Table Rows
 					oTable.bindRows({
 						path: "/root",
 						parameters: {
 							arrayNames: ['children']
 						}
 					});
+					// Parts time events (allocation rectangles)
 					oTable.setAggregation("rowSettingsTemplate", new sap.gantt.simple.GanttRowSettings({
 						rowId: "{id}",
 						shapes1: {
@@ -420,8 +425,8 @@
 							})
 						}
 					}));
-		
-					oGanttChartWithTable.bindSimpleAdhocLines({
+					//Milestones
+					this.oGanttChartWithTable.bindSimpleAdhocLines({
 						path: "/milestones",
 						template: new sap.gantt.simple.AdhocLine({
 							stroke: "#3f6491",
@@ -432,7 +437,11 @@
 							markerPress: this.onMarkerPress.bind(this)
 						})
 					});
-		
+					// Legend Configuration
+					this.oGanttChartWithTable.setAxisTimeStrategy(this._createZoomStrategy());
+				},
+				rerenderMainControls: function() {
+					this.oGanttChartContainer.rerender();
 				},
 				onMarkerMouseEnter: function (oEvent) {
 					debugger;
@@ -588,10 +597,6 @@
 			this._props = {};
 		}
 
-		render() {
-			// this.ChartController.render();
-		}
-
 		//When the custom widget is updated, the Custom Widget SDK framework executes this function first
 		onCustomWidgetBeforeUpdate(oChangedProperties) {
 			debugger;
@@ -601,8 +606,7 @@
 		//When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
 		onCustomWidgetAfterUpdate(oChangedProperties) {
 			debugger;
-			// this.ChartController.prototype.render();
-			
+			window.$UI5WidgetController.rerenderMainControls();
 		}
 	});
 })();
