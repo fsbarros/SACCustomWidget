@@ -442,6 +442,10 @@
 				rerenderMainControls: function() {
 					this.oGanttChartContainer.rerender();
 				},
+				setExternalData: function (data, configs) {
+					debugger;	
+				},
+				//--------------------------------------
 				onMarkerMouseEnter: function (oEvent) {
 					debugger;
 					var fnFormatDate = function (date) {
@@ -483,6 +487,7 @@
 						"Date": oBindingContext.getProperty("date")
 					});
 				},
+				//-----------------------------------------
 				fnTimeConverter: function (sTimestamp) {
 					return sap.gantt.misc.Format.abapTimestampToDate(sTimestamp);
 				},
@@ -594,6 +599,10 @@
 			this.oView.placeAt(this.$div);
 			
 			this._props = {};
+		}
+
+		setData(){
+			window.$UI5WidgetController.setExternalData();
 		}
 
 		//When the custom widget is updated, the Custom Widget SDK framework executes this function first
