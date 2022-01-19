@@ -194,7 +194,8 @@
 			this.appendChild(tmpl.content.cloneNode(true));
 			this.$div = this.querySelector('div.ui5-chart-anchor');
 			
-			window.$ChartControllerFactory = sap.ui.core.mvc.Controller.extend("ChartController", {
+			window.$ChartControllerFactory = 
+			sap.ui.core.mvc.Controller.extend("ChartController", {
 				onInit: function () {
 					window.$UI5WidgetController = this;
 					this.initLocalVars();
