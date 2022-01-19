@@ -12,17 +12,16 @@
 		{
 			"kind": "main",
 			"tag": "com-demo-basic-ui5-chart",
-			"url": "https://audipocsaccustomwidget1-a2f6dceed.dispatcher.hana.ondemand.com/SACWidget_SAPUI5/widget.js",
+			"url": "https://fsbarros.github.io/SACCustomWidget/widget.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
 	],
-	"properties": {
-	},
+	"properties": {},
 	"methods": {
 		"setData": {
-            "description": "Sets the data for the chart.",
-            "parameters": [
+			"description": "Sets the data for the chart.",
+			"parameters": [
 				{
 					"name": "newData",
 					"type": "string",
@@ -33,11 +32,11 @@
 					"type": "string",
 					"description": "Chart Config"
 				}
-            ]
+			]
 		},
 		"getSelection": {
 			"description": "selection data",
-            "returnType": "string"
+			"returnType": "string"
 		}
 	},
 	"events": {
