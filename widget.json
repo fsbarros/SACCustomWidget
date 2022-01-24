@@ -24,13 +24,8 @@
 			"parameters": [
 				{
 					"name": "newData",
-					"type": "string",
+					"type": "ResultSet[]",
 					"description": "JSON Feed data"
-				},
-				{
-					"name": "details",
-					"type": "string",
-					"description": "Chart Config"
 				}
 			]
 		},
