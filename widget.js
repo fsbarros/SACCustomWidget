@@ -601,7 +601,7 @@
 			this._props = {};
 		}
 
-		setData(newData){
+		setData(tableData, allData){
 			debugger;
 			window.$UI5WidgetController.setExternalData();
 		}

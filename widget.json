@@ -23,9 +23,14 @@
 			"description": "Sets the data for the chart.",
 			"parameters": [
 				{
-					"name": "newData",
+					"name": "tableData",
 					"type": "ResultSet[]",
-					"description": "JSON Feed data"
+					"description": "Displayed Table data"
+				},
+				{
+					"name": "allData",
+					"type": "ResultSet[]",
+					"description": "Invisible/All Data Table"
 				}
 			]
 		},
