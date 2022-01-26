@@ -370,6 +370,7 @@
 					});
 					this.getView().setModel(this._oModel);
 				},
+				
 				setBindings: function () {
 					var oTable = this.oGanttChartWithTable.getTable();
 					// Table Rows
