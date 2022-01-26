@@ -434,39 +434,10 @@
 					}
 					var oMarker = oEvent.getSource();
 					var oBindingContext = oMarker.getBindingContext();
-					// this.showDataPanel({
-					// 	Element: "Marker",
-					// 	Action: "Mouse Over",
-					// 	Data: "-------------",
-					// 	Text: oBindingContext.getProperty("Text"),
-					// 	Date: fnFormatDate(oBindingContext.getProperty("date"))
-					// });
 				},
-				// showDataPanel: function (oData) {
-				// 	var oDataPanel = this.getView().byId("idDataPanel");
-				// 	var aLeft = Object.keys(oData);
-				// 	oDataPanel.destroyContent();
-				// 	var aResultContent = new sap.m.VBox();
-				// 	for (var i=0; i<aLeft.length; i++) {
-				// 		aResultContent.addItem( new sap.m.HBox({
-				// 			items:[
-				// 				new sap.m.Label({text: aLeft[i]}),
-				// 				new sap.m.Label({text: oData[aLeft[i]]}).addStyleClass("sapUiSmallMarginBegin")
-				// 			]
-				// 		}));
-				// 	}
-				// 	oDataPanel.addContent(aResultContent);
-				// },
 				onMarkerPress: function (oEvent) {
 					var oMarker = oEvent.getSource();
 					var oBindingContext = oMarker.getBindingContext();
-					// this.showDataPanel({
-					// 	"Element": "Marker",
-					// 	"Action": "Press",
-					// 	"Data": "-------------",
-					// 	"Text": oBindingContext.getProperty("Text"),
-					// 	"Date": oBindingContext.getProperty("date")
-					// });
 				},
 				//-----------------------------------------
 				fnTimeConverter: function (sTimestamp) {
