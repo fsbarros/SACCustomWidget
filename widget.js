@@ -421,7 +421,7 @@
 					this.oGanttChartWithTable.setAxisTimeStrategy(this._createZoomStrategy());
 				},
 				rerenderMainControls: function() {
-					this.oGanttChartContainer.rerender(); 
+					this.oGanttChartContainer.rerender();
 				},
 				setExternalData: function (data, configs) {
 					debugger;	
