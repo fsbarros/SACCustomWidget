@@ -177,6 +177,13 @@
 			this.$div = this.querySelector('div.ui5-chart-anchor');
 			
 			window.$ChartControllerFactory =  sap.ui.core.mvc.Controller.extend("ChartController", {
+				tasksKeys: [
+					"SWZ_Erstellung",
+					"KSWZ",
+					"SWZ_Optimierung",
+					"SWZ_Note_3",
+					"SWZ_Note_1"
+				],
 				onInit: function () {
 					window.$UI5WidgetController = this;
 					this.initLocalVars();
