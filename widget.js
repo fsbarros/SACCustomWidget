@@ -12,7 +12,8 @@
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				
 				<m:HBox justifyContent="Start" width="100rem">
-					<m:Panel id="idLegendPanel" expanded="true" expandable="true" backgroundDesign="Transparent" width="100rem"  class="legendPanel sapUiSmallMarginEnd" >
+					<m:Panel id="idLegendPanel" expanded="true" expandable="true" backgroundDesign="Transparent" width="100rem"
+						class="legendPanel sapUiSmallMarginEnd">
 						<m:headerToolbar>
 							<m:OverflowToolbar>
 								<m:Title text="Legend"/>
@@ -94,7 +95,7 @@
 						</m:HBox>
 					</m:Panel>
 				</m:HBox>
-				<m:VBox width="100rem">
+				<m:VBox id="idGanttParent" width="100rem">
 					<gnt2:GanttChartContainer id="GanttChartContainer" enableTimeScrollSync="true">
 						<gnt2:toolbar>
 							<gnt2:ContainerToolbar id="idContainerToolbar" showTimeZoomControl="true" showBirdEyeButton="false" showDisplayTypeButton="true"
@@ -370,7 +371,6 @@
 					});
 					this.getView().setModel(this._oModel);
 				},
-				
 				setBindings: function () {
 					var oTable = this.oGanttChartWithTable.getTable();
 					// Table Rows
@@ -424,21 +424,20 @@
 				rerenderMainControls: function() {
 					this.oGanttChartContainer.rerender();
 				},
-				setExternalData: function (data, configs) {
-					debugger;	
+				setExternalData: function (oSelectedData, oAllData) {
+					debugger;
+					var aTasks = this._getParts(oSelectedData,oAllData);
+					var aMileStones = this._getMilestones(oAllData);
+					
+					this.getView().getModel().setData({
+						"root": aTasks,
+						"milestones": aMileStones
+					});
 				},
 				//--------------------------------------
 				onMarkerMouseEnter: function (oEvent) {
-					debugger;
-					var fnFormatDate = function (date) {
-						return date.substr(0,4).concat("-").concat(date.substr(4,2)).concat("-").concat(date.substr(6,2));
-					}
-					var oMarker = oEvent.getSource();
-					var oBindingContext = oMarker.getBindingContext();
 				},
 				onMarkerPress: function (oEvent) {
-					var oMarker = oEvent.getSource();
-					var oBindingContext = oMarker.getBindingContext();
 				},
 				//-----------------------------------------
 				fnTimeConverter: function (sTimestamp) {
@@ -554,9 +553,9 @@
 			this._props = {};
 		}
 
-		setData(tableData, allData){
+		setData(selectedData, globalData){
 			debugger;
-			window.$UI5WidgetController.setExternalData();
+			window.$UI5WidgetController.setExternalData(selectedData, globalData);
 		}
 
 		//When the custom widget is updated, the Custom Widget SDK framework executes this function first
