@@ -433,13 +433,13 @@
 				},
 				setExternalData: function (oSelectedData, oAllData) {
 					debugger;
-					var aTasks = this._getParts(oSelectedData,oAllData);
-					var aMileStones = this._getMilestones(oAllData);
+					// var aTasks = this._getParts(oSelectedData,oAllData);
+					// var aMileStones = this._getMilestones(oAllData);
 					
-					this.getView().getModel().setData({
-						"root": aTasks,
-						"milestones": aMileStones
-					});
+					// this.getView().getModel().setData({
+					// 	"root": aTasks,
+					// 	"milestones": aMileStones
+					// });
 				},
 				//--------------------------------------
 				onMarkerMouseEnter: function (oEvent) {
