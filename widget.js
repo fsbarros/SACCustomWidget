@@ -540,6 +540,46 @@
 						coarsestTimeLineOption: oTimeLineOptions["1year"],
 						finestTimeLineOption: oTimeLineOptions["1day"]
 					});
+				},
+				_getParts: function (oSelectedData,oAllData) {
+					var i = 1;
+					var getPartName = o => o.Measures_to_4z5i7302u2.id;
+					var getTasks = o => {
+						return this.tasksKeys.map( a => { return {
+							"startTime": this.__getFormattedDate(o[`${a}_Start`].id),
+							"endTime": this.__getFormattedDate(o[`${a}_End`].id),
+							"status": a
+						};});
+					};
+					var getRow = o => { return {
+						"teilebezeichnung": getPartName(o),
+						"id": (i++).toString(),
+						"tasks": getTasks(o)
+					};};
+					return oSelectedData.map( o => {
+						var data = oAllData.find(a => a.Measures_to_4z5i7302u2.id === o.Measures_to_4z5i7302u2.id);
+						return getRow(data);
+					});
+					
+				},
+				_getMilestones: function (aAllData) {
+					return [
+						{	
+							"Text": "Milestone 1",
+							"date": this.__getFormattedDate(aAllData[1].Milestone_1.id)
+						},
+						{	
+							"Text": "Milestone 2",
+							"date": this.__getFormattedDate(aAllData[1].Milestone_2.id)
+						},
+						{	
+							"Text": "Milestone 3",
+							"date": this.__getFormattedDate(aAllData[1].Milestone_3.id)
+						}
+					];
+				},
+				__getFormattedDate: function (date) {
+					return `${date.substr(0,4)}${date.substr(5,2)}${date.substr(8,2)}000000`;
 				}
 			});
 
